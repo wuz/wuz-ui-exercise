@@ -1,0 +1,39 @@
+@import "../styles/tokens";
+
+.c-EmailPreview {
+  padding: 16px;
+
+  > * + * {
+    margin-bottom: 1em;
+  }
+
+  .c-EmailPreviewToolbar {
+    justify-content: flex-end;
+    margin-bottom: 8px;
+  }
+
+  .c-EmailTag {
+    border: none;
+    border-radius: 4px;
+    padding: 0 4px;
+    font-weight: bold;
+    margin-right: 4px;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, "large")) {
+    position: absolute;
+    width: 100vw;
+    padding: 8px;
+    background: #ffffff;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+
+    h1 {
+      font-size: 1.5em;
+    }
+    h2 {
+      font-size: 1.15em;
+    }
+  }
+}

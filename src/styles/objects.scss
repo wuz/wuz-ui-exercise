@@ -1,0 +1,32 @@
+/* Reusuable UI objects like grids and flex containers */
+
+.o-Grid {
+  --grid-columns: 2;
+  --grid-min-size: 150px;
+  --grid-max-size: 1fr;
+  
+  .o-GridElem {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), minmax(var(--grid-min-size), var(--grid-max-size)));
+  }
+}
+
+.o-Flex {
+  display: flex;
+
+  &.o-Flex-inline {
+    display: inline-flex;
+  }
+  
+  &.o-Flex-ai-c {
+    align-items: center;
+  }
+
+  &.o-Flex-jc-c {
+    justify-content: center;
+  }
+
+  &.o-Flex-jc-sb {
+    justify-content: space-between;
+  }
+}

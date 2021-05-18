@@ -1,0 +1,59 @@
+@import "../styles/tokens";
+
+.c-MailApp {
+  display: grid;
+  grid-template-areas:
+    "sidebar header header header header header"
+    "sidebar main main main main main";
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  .c-MailAppHeader {
+    padding: 8px;
+    grid-area: header;
+
+    .c-MailAppSearch {
+      width: 100%;
+      max-width: 600px;
+      padding: 8px 16px;
+      border-radius: 4px;
+
+      &:focus-within {
+        box-shadow: 0 1px 1px 0 rgba(65, 69, 73, 0.3),
+          0 1px 3px 1px rgba(65, 69, 73, 0.15);
+        background: map-get($colors, "white");
+      }
+
+      input {
+        flex: 1 0 auto;
+        margin-left: 16px;
+        display: block;
+        font-size: 1em;
+        height: 100%;
+        background: none;
+        border: none;
+        font-family: var(--sans-serif-font);
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .c-MailAppMain {
+    grid-area: main;
+    width: calc(100vw - 250px);
+  }
+
+  @media screen and (max-width: map-get($breakpoints, "large")) {
+    overflow: hidden;
+    height: 100vh;
+    grid-template-areas:
+      "sidebar"
+      "header"
+      "main"
+      "main"
+      "main";
+  }
+}

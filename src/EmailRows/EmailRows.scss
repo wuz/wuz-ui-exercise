@@ -1,0 +1,153 @@
+@import "../styles/tokens";
+
+.c-EmailRows {
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  flex: 1 0 auto;
+
+  .c-EmailRowHeader {
+    height: 40px;
+    padding: 8px;
+    font-weight: bold;
+
+    div:nth-child(2) {
+      margin-left: 24px;
+    }
+
+    button {
+      height: 100%;
+      width: 30px;
+      margin-left: 8px;
+      color: map-get($colors, "lighter-blue");
+
+      &[disabled] {
+        color: map-get($colors, "light-shade-blue");
+      }
+    }
+  }
+
+  .c-EmailRowNoResults {
+    --grid-columns: 1;
+    text-align: center;
+    width: 100%;
+  }
+
+  .c-EmailRow {
+    --grid-columns: 4;
+    padding: 0 8px;
+    border-left: 4px solid transparent;
+    height: 40px;
+    align-items: center;
+
+    *:not(input) {
+      outline: none;
+    }
+
+    &:focus-within,
+    &.active {
+      border-left: 4px solid map-get($colors, "lightest-blue");
+      box-shadow: 1px 4px 10px rgba(map-get($colors, "dark-blue"), 0.16);
+    }
+
+    div {
+      padding: 4px 0;
+    }
+
+    .c-EmailDate {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      text-align: right;
+      font-size: 0.75;
+    }
+
+    .c-EmailTags {
+      margin-right: 8px;
+    }
+
+    .c-EmailSubject {
+      flex: 1 0 auto;
+    }
+  }
+
+  .c-EmailTag {
+    border: none;
+    border-radius: 4px;
+    height: 100%;
+    padding: 0 4px;
+    font-size: 0.75rem;
+    line-height: 18px;
+    font-weight: bold;
+    margin-right: 4px;
+  }
+
+  .o-Grid &.collapsed .c-EmailRow.o-GridElem {
+    padding: 8px;
+    grid-template-columns: 25px auto;
+    height: auto;
+
+    div {
+      padding: 0;
+    }
+
+    .dash {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: map-get($breakpoints, "large")) {
+    width: 100vw;
+    .o-Grid & .c-EmailRow.o-GridElem {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 8px;
+
+      div {
+        padding: 0;
+      }
+
+      > *:nth-child(n + 3) {
+        margin-left: 40px;
+      }
+
+      div:last-child {
+        margin-left: auto;
+      }
+    }
+  }
+
+  @media screen and (max-width: map-get($breakpoints, "medium")) {
+    width: 100vw;
+    overflow-x: hidden;
+
+    .c-EmailRowHeader {
+      display: none;
+    }
+
+    .c-EmailTags {
+      margin-bottom: 4px;
+    }
+
+    .o-Grid & .c-EmailRow.o-GridElem {
+      button {
+        display: block;
+      }
+
+      .dash {
+        display: none;
+      }
+
+      div:last-child {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.o-Grid .c-EmailRow.o-GridElem {
+  grid-template-columns: 50px 250px 3.5fr 1fr;
+  grid-gap: 16px;
+}

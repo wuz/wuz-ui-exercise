@@ -1,0 +1,10 @@
+/* Generic HTML element overrides */
+
+@import './tokens';
+@import "./reset";
+
+body {
+  font-family: var(--sans-serif-font);
+  font-size: 14px;
+  color: map-get($colors, 'text-color');
+}

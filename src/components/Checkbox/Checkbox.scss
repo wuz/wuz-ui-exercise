@@ -1,0 +1,27 @@
+@import "../../styles/tokens";
+
+.c-Checkbox {
+  height: 20px;
+  width: 20px;
+  opacity: .16;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .54;
+  }
+
+  &.checked {
+    opacity: .75;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'large')) {
+    input[type="checkbox"] {
+      height: 30px;
+      width: 30px;
+    }
+  }
+}

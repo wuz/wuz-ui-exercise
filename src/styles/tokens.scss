@@ -1,0 +1,33 @@
+/* Application Tokens and Variables */
+$colors: (
+  "red": #d93025,
+  light-blue: #bed8ff,
+  light-red: #fce6e4,
+  text-color: #202124,
+  dark-blue: #12232e,
+  blue: #4786ef,
+  lightest-blue: #4da8da,
+  shade-blue: #203647,
+  white: #ffffff,
+  lighter-gray: #f4f7f7,
+  light-gray: #f0f2f3,
+  gray: #5f6368,
+  dark-gray: #666,
+  shade-gray: #6d6d6d,
+);
+
+$breakpoints: (
+  large: 960px,
+  medium: 400px,
+);
+
+:root {
+  --sans-serif-font: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  --mono-font: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
+
+  @each $name, $color in $colors {
+    --c-#{$name}: $color;
+  }
+}

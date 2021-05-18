@@ -1,0 +1,40 @@
+/* Utility classes for quick styling */
+
+.b-b-1 {
+  border-bottom: 1px solid;
+}
+
+.b-l-1 {
+  border-left: 1px solid;
+}
+
+.b-r-1 {
+  border-right: 1px solid;
+}
+
+@each $name, $color in $colors {
+  .bc-#{$name} {
+    border-color: $color;
+  }
+
+  .txt-#{$name} {
+    color: $color;
+  }
+
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+
+.btn-reset {
+  background: none;
+  border: 0;
+  padding: 0;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.h-100vh {
+  height: 100vh;
+}
