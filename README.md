@@ -1,10 +1,10 @@
-# SalesLoft UI Exercise
+# Gmail Clone UI Exercise
 
-## Instructions
+![Screen Shot 2021-05-19 at 10 22 27-fullpage](https://user-images.githubusercontent.com/2363236/118829569-36d82800-b88c-11eb-8ce4-06d0b2e697a3.png)
 
-Create a responsive single page app that is based on Gmail's web interface. Make any improvements to the UX that you see fit. This is intended to show your knowledge of Javascript (vanilla JS or any framework of your choice) & CSS/Sass/Less, while also showing your grasp of UI/UX best practices.
+[See the running app here](https://fervent-agnesi-b92cfa.netlify.app/)
 
-Use the following guidelines when building the application:
+## Project Goals
 
 - [x] Uses color scheme similar to that of Gmail
 - [x] Displays a list of emails with name, title, date and tags based on provided emails.json file
@@ -14,16 +14,20 @@ Use the following guidelines when building the application:
 - [x] Table cells should be viewable at all resolutions above 320px
 - [x] Include at least one javascript test
 
-Spend time on both the UI/UX and the actual functionality of the list view. This view should be as complete as possible without interacting with a backend data service, so look at stubbing out fake data.
+There were a few things I didn't quite get to:
+- Error handling for the "api"
+- Building out the pages for archived and deleted mails
+- Filters for the tags
+- Actions on the email preview view
+- More tests
 
-Try to time box this exercise to take no longer than 4 hours. If you don't feel like you're able to finish within that timeframe, focus on making parts of the exercise great rather than submitting a project that's 80% complete across the board. This gives engineers an opportunity to explore what it's like to work with you while we're fleshing out the remaining work or expanding on it.
+## Run it locally
 
-Also, please don't use this an an opportunity to learn a new framework - instead, use tools and technologies you are comfortable with so we can have an in-depth discussion about your decisions and approach.
+```
+git clone https://github.com/wuz/wuz-ui-exercise # clone the project
+cd wuz-ui-exercise # cd to the folder
+yarn # install the dependencies
+yarn run # run the app
+```
 
-## Submission
-
-Please clone this repo and submit via Greenhouse. The submission should include:
-
-- A link to source files or GitHub repo
-- A link to a running version of the application
-- A README file with instructions on how to run the project locally
+This should automatically open the app for you, but otherwise it should be available on https://localhost:3000
